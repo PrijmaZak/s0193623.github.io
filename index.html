@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <title>Задание №1</title>
+</head>
+
+<body>
+  <a id="vverh"></a>
+  <h1>Гиперссылки</h1>
+  <ul>
+    <li>
+      <a href="http://kubsu.ru/ru/university" target="_blank">Официальный сайт КубГУ (HTTP)</a>
+    </li>
+    <li>
+      <a href="https://kubsu.ru/ru/university" target="_blank">Официальный сайт КубГУ (HTTPS)</a>
+    </li>
+    <li>
+      <a href="https://kubsu.ru/ru/university" target="_blank">
+        <img src="flower.jpg" alt="Ссылка-изображение" id="a1" width="300" height="200">
+      </a>
+    </li>
+    <li>
+      <a href="#forma" target="_blank">Сокращенная ссылка на внутреннюю страницу (к форме)</a>
+    </li>
+    <li>
+      <a href="#vverh" target="_blank">Сокращенная ссылка на главную страницу (вверх)</a>
+    </li>
+    <li>
+      <a href="#chast" target="_blank">Ссылка на часть текущей страницы</a>
+    </li>
+    <li>
+      <a href="https://kubsu.ru/search?query=структура&type=all&lang=ru" target="_blank">Ссылка с тремя параметрами в URL</a>
+    </li>
+    <li>
+      <a href="https://kubsu.ru/node/44?id=185" target="_blank">Ссылка с параметром id в URL</a>
+    </li>
+    <li>
+      <a href="https://www.kubsu.ru/ru/studlife" target="_blank">Относительная ссылка на страницу в текущем каталоге</a>
+    </li>
+    <li>
+      <a href="https://www.kubsu.ru/ru/about" target="_blank">Относительная ссылка на страницу в каталоге about</a>
+    </li>
+    <li>
+      <a href="https://www.kubsu.ru/ru" target="_blank">Относительная ссылка на страницу уровнем выше текущего</a>
+    </li>
+    <li>
+      <a href="https://www.kubsu.ru" target="_blank">Относительная ссылка на страницу двумя уровнями выше</a>
+    </li>
+    <li>
+      <p> Институт географии, геологии, туризма и сервиса -  с <a href="https://infoneeds.kubsu.ru/infoneeds/guests/selectspeciality.jsp?fid=6&year=2024" target="_blank"> 2024</a></p>
+    </li>
+    <li>
+      <a href="https://vk.com/kubsu_official#Олимпиада" target="_blank">Ссылка на фрагмент страницы стороннего сайта</a>
+    </li>
+    <li>
+<img src="4lIxAADR5qKlGUtBtqKGteXcQhP2qwex.webp" usemap="#image-map">
+<map name="image-map">
+    <area target="_blank" alt="Прямоугольная область" title="Прямоугольная область" href="https://www.kubsu.ru/ru/sveden" coords="58,73,610,640" shape="rect">
+    <area target="_blank" alt="Круглая область" title="Круглая область" href="https://www.kubsu.ru/ru/node/21" coords="906,353,252" shape="circle">
+</map>
+    </li>
+    <li>
+      <a href="" target="_blank">Ссылка с пустым href</a>
+    </li>
+    <li>
+      <a Ссылка без href</a>
+    </li>
+    <li>
+      <a href="https://kubsu.ru" rel="nofollow" target="_blank">Ссылка, по которой запрещен переход поисковикам</a>
+    </li>
+    <li>
+      <noindex><a href="https://kubsu.ru" rel="noindex" target="_blank">Запрещенная ссылка для индексации поисковиками</a></noindex>
+    </li>
+    <li>
+      Нумерованный список ссылок с подписями title:
+      <ol>
+        <li><a href="https://kubsu.ru" title="Главная страница университета" target="_blank">Кубанский государственный университет</a></li>
+        <li><a href="https://www.kubsu.ru/ru/university/departments" title="Факультеты" target="_blank">Факультеты</a></li>
+        <li><a href="https://www.kubsu.ru/ru/university/history-tradition" title="История и традиции" target="_blank">История и традиции</a></li>
+      </ol>
+    </li>
+    <li>
+      <a href="ftp://ftp.kubsu.ru/documents/price_list.pdf" target="_blank">Ссылка на файл на сервере FTP с авторизацией</a>
+    </li>
+  </ul>
+    <div id="chast">
+    <h2>Часть страницы</h2>
+    <p>Это раздел страницы, на который ведет ссылка</p>
+    <a href="#vverh">Вернуться наверх</a>
+  </div>
+  <div id="forma">
+    <h3>Форма</h3
+        >
+     <form action="/" method="POST">
+      
+        <label>ФИО: <br />
+        <input name="field-name-1"
+        
+        placeholder="Введите ваше ФИО" required />
+      </label><br />
+        
+       
+        <label>Номер телефона: <br />
+        <input name="phone"
+        placeholder="+7 (888) 555-12-34" required />
+      </label><br />
+        
+        
+        <label>
+        Электронная почта (email):<br />
+        <input name="field-email"
+          type="email"
+          placeholder="Введите почту" />
+      </label><br />
+        
+        
+        <label>
+        Дата рождения:<br />
+        <input name="field-date"
+          value="2000-01-01"
+          type="date" />
+      </label><br />
+        
+       
+        Пол:<br />
+      <label><input type="radio" checked="checked"
+        name="radio-group-1" value="Значение2" />
+        Мужской</label><br />
+      <label><input type="radio" 
+        name="radio-group-1" value="Значение2" />
+        Женский</label><br />
+
+        <label>
+          Ваш любимый язык программирования:
+          <br />
+          <select name="field-name-2" required
+            multiple="multiple">
+            <option value="Значение1">Pascal</option>
+            <option value="Значение2">C</option>
+            <option value="Значение3">C++</option>
+            <option value="Значение4">JavaScript</option>
+            <option value="Значение5" >PHP</option>
+            <option value="Значение6" >Python</option>
+            <option value="Значение7">Java</option>
+            <option value="Значение8" >Haskel</option>
+            <option value="Значение9" >Clojure</option>
+            <option value="Значение10">Prolog</option>
+            <option value="Значение11" >Scala</option>
+          </select>
+        </label><br />
+
+        <label>
+          Биография:<br />
+          <textarea name="field-name-2">Расскажите о своей жизни</textarea>
+        </label><br />
+
+        С контрактом ознакомлен(а):<br />
+      <label><input type="checkbox" required
+        name="check-1" />
+        </label><br />
+
+        <input type="submit" value="Сохранить" />
+      </form> 
+
+</body>
+</html>
