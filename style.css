@@ -1,0 +1,248 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+
+header {
+  background: #333;
+  color: white;
+  padding: 15px 0;
+  width: 100%;
+}
+
+.header-content {
+  max-width: 960px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+/* Быстрое исправление */
+.hero {
+    padding-top: 100px !important; /* поднимаем контент выше */
+}
+.logo {
+    width: 150px;    /* оптимальная ширина */
+    height: 48px;    /* оптимальная высота */
+}
+
+.site-name {
+  font-size: 24px;
+  margin: 0;
+}
+
+.header-menu a {
+  color: white;
+  text-decoration: none;
+  margin-left: 20px;
+  padding: 5px 10px;
+}
+
+.header-menu a:hover {
+  background: #555;
+  border-radius: 3px;
+}
+
+/* Основное содержимое */
+.content {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 20px;
+  flex: 1;
+  width: 100%;
+}
+
+/* Основное меню */
+.main-menu {
+  background: #f4f4f4;
+  padding: 15px;
+  margin: 20px 0;
+  text-align: center;
+  border-radius: 5px;
+}
+
+.main-menu a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: #333;
+  padding: 5px 10px;
+}
+
+.main-menu a:hover {
+  background: #ddd;
+  border-radius: 3px;
+}
+
+/* Секции */
+section {
+  margin-bottom: 40px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+h2 {
+  color: #333;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #333;
+  padding-bottom: 5px;
+}
+
+/* Таблица */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+}
+
+table th, table td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: left;
+}
+
+table th {
+  background-color: #333;
+  color: white;
+  font-weight: bold;
+}
+
+table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+table tr:nth-child(odd) {
+  background-color: white;
+}
+
+table tr:hover {
+  background-color: #f0f0f0;
+}
+
+/* Форма */
+form {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+form label {
+  display: block;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+form input, form select, form textarea {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+}
+
+form textarea {
+  height: 100px;
+  resize: vertical;
+}
+
+form input[type="radio"], form input[type="checkbox"] {
+  width: auto;
+  margin-right: 10px;
+}
+
+form input[type="submit"] {
+  background: #333;
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  cursor: pointer;
+  width: auto;
+  font-size: 16px;
+  border-radius: 5px;
+}
+
+form input[type="submit"]:hover {
+  background: #555;
+}
+
+/* Подвал */
+footer {
+  background: #333;
+  color: white;
+  padding: 20px 0;
+  width: 100%;
+  text-align: center;
+  margin-top: auto;
+}
+
+.footer-content {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Ссылки */
+a {
+  color: #0066cc;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+ul, ol {
+  margin-left: 30px;
+  margin-bottom: 15px;
+}
+
+li {
+  margin-bottom: 8px;
+}
+
+/* Изображения */
+img {
+  max-width: 100%;
+  height: auto;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .header-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .header-menu {
+    margin-top: 10px;
+  }
+  
+  .header-menu a {
+    margin: 0 5px;
+  }
+  
+  .main-menu a {
+    display: block;
+    margin: 5px 0;
+  }
+  
+  table {
+    font-size: 14px;
+  }
+  
+  table th, table td {
+    padding: 8px;
+  }
+}
