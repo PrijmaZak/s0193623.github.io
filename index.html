@@ -49,8 +49,8 @@
         <li>
           <img src="4lIxAADR5qKlGUtBtqKGteXcQhP2qwex.webp" alt="Карта-изображение" usemap="#image-map" width="400">
           <map name="image-map">
-            <area target="_blank" alt="Прямоугольная область" title="Прямоугольная область" href="https://www.kubsu.ru/ru/sveden" coords="58,73,610,640" shape="rect">
-            <area target="_blank" alt="Круглая область" title="Круглая область" href="https://www.kubsu.ru/ru/node/21" coords="906,353,252" shape="circle">
+            <area target="_blank" alt="Прямоугольная область" title="Прямоугольная область" href="https://www.kubsu.ru/ru/sveden" coords="340,20,420,100" shape="rect">
+            <area target="_blank" alt="Круглая область" title="Круглая область" href="https://www.kubsu.ru/ru/node/21" coords="60,380,40" shape="circle">
           </map>
         </li>
         
@@ -83,7 +83,7 @@
           <tr>
             <th>Жанры</th>
             <th>Название/год</th>
-            <th>Режисер</th>
+              <th colspan="2">Режисер</th>
             <th>Оценка</th>
           </tr>
         </thead>
@@ -97,7 +97,7 @@
           <tr>
             <td>Боевики</td>
             <td>Карты, деньги, 2 ствола/1998</td>
-            <td>Гай Ричи</td>
+            <td rowspan="2">Гай Ричи</td>
             <td>8.6/10</td>
           </tr>
           <tr>
@@ -138,7 +138,7 @@
         </label><br />
         
         <label>Номер телефона: <br />
-          <input name="phone" placeholder="+7 (888) 555-12-34" required>
+          <input name="phone" pattern ="[0-9+]{11,15}"placeholder="+7 (888) 555-12-34" required>
         </label><br />
         
         <label>Электронная почта (email):<br />
