@@ -2,7 +2,8 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <title>Задание №2</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Задание №3 - Адаптивная верстка</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -11,8 +12,8 @@
   <header>
     <div class="header-content">
       <a href="#" class="logo">
-    <img src="logotip.png" alt="Логотип">
-</a>
+        <img src="logotip.png" alt="Логотип">
+      </a>
       <h1 class="site-name">Сайт про все</h1>
       <nav class="header-menu">
         <a href="/index.html">Главная</a>
@@ -23,67 +24,14 @@
   </header>
 
   <main class="content">
-    <nav class="main-menu">
-      <a href="#links">Список гиперссылок</a>
-      <a href="#table">Таблица</a>
-      <a href="#form">Форма</a>
-    </nav>
-
-    <section id="links">
-      <h2>Гиперссылки</h2>
-      <ul>
-        <li><a href="http://kubsu.ru/ru/university" target="_blank">Официальный сайт КубГУ (HTTP)</a></li>
-        <li><a href="https://kubsu.ru/ru/university" target="_blank">Официальный сайт КубГУ (HTTPS)</a></li>
-        <li><a href="https://kubsu.ru/ru/university" target="_blank"><img src="flower.jpg" alt="Ссылка-изображение" width="300" height="200"></a></li>
-        <li><a href="#form">Сокращенная ссылка на внутреннюю страницу (к форме)</a></li>
-        <li><a href="#top">Сокращенная ссылка на главную страницу (вверх)</a></li>
-        <li><a href="#part">Ссылка на часть текущей страницы</a></li>
-        <li><a href="https://kubsu.ru/search?query=структура&type=all&lang=ru" target="_blank">Ссылка с тремя параметрами в URL</a></li>
-        <li><a href="https://kubsu.ru/node/44?id=185" target="_blank">Ссылка с параметром id в URL</a></li>
-        <li><a href="https://www.kubsu.ru/ru/studlife" target="_blank">Относительная ссылка на страницу в текущем каталоге</a></li>
-        <li><a href="https://www.kubsu.ru/ru/about" target="_blank">Относительная ссылка на страницу в каталоге about</a></li>
-        <li><a href="https://www.kubsu.ru/ru" target="_blank">Относительная ссылка на страницу уровнем выше текущего</a></li>
-        <li><a href="https://www.kubsu.ru" target="_blank">Относительная ссылка на страницу двумя уровнями выше</a></li>
-        <li><p>Институт географии, геологии, туризма и сервиса - с <a href="https://infoneeds.kubsu.ru/infoneeds/guests/selectspeciality.jsp?fid=6&year=2024" target="_blank">2024</a></p></li>
-        <li><a href="https://vk.com/kubsu_official#Олимпиада" target="_blank">Ссылка на фрагмент страницы стороннего сайта</a></li>
-        <li>
-          <img src="4lIxAADR5qKlGUtBtqKGteXcQhP2qwex.webp" alt="Карта-изображение" usemap="#image-map" width="400">
-          <map name="image-map">
-            <area target="_blank" alt="Прямоугольная область" title="Прямоугольная область" href="https://www.kubsu.ru/ru/sveden" coords="340,20,420,100" shape="rect">
-            <area target="_blank" alt="Круглая область" title="Круглая область" href="https://www.kubsu.ru/ru/node/21" coords="60,380,40" shape="circle">
-          </map>
-        </li>
-        
-        <li><a href="">Ссылка с пустым href</a></li>
-        <li><a>Ссылка без href</a></li>
-        <li><a href="https://kubsu.ru" rel="nofollow" target="_blank">Ссылка, по которой запрещен переход поисковикам</a></li>
-        <li><a href="https://kubsu.ru" rel="noindex" target="_blank">Запрещенная ссылка для индексации поисковиками</a></li>
-        <li>
-          Нумерованный список ссылок с подписями title:
-          <ol>
-            <li><a href="https://kubsu.ru" title="Главная страница университета" target="_blank">Кубанский государственный университет</a></li>
-            <li><a href="https://www.kubsu.ru/ru/university/departments" title="Факультеты" target="_blank">Факультеты</a></li>
-            <li><a href="https://www.kubsu.ru/ru/university/history-tradition" title="История и традиции" target="_blank">История и традиции</a></li>
-          </ol>
-        </li>
-        <li><a href="ftp://ftp.kubsu.ru/documents/price_list.pdf" target="_blank">Ссылка на файл на сервере FTP с авторизацией</a></li>
-      </ul>
-    </section>
-
-    <section id="part">
-      <h2>Часть страницы</h2>
-      <p>Это раздел страницы, на который ведет ссылка</p>
-      <a href="#top">Вернуться наверх</a>
-    </section>
-
-    <section id="table">
+    <section id="table" class="content-section">
       <h2>Таблица</h2>
       <table>
         <thead>
           <tr>
             <th>Жанры</th>
             <th>Название/год</th>
-              <th colspan="2">Режисер</th>
+            <th colspan="2">Режисер</th>
             <th>Оценка</th>
           </tr>
         </thead>
@@ -105,14 +53,12 @@
             <td>Воспоминание об убийстве/2003</td>
             <td>Пон Джун-хо</td>
             <td>7.6/10</td>
-
           </tr>
           <tr>
             <td>Фентези</td>
             <td>Хоббит:Пустошь Смауга/2013</td>
             <td>Питер Джексон</td>
             <td>8.0/10</td>
-
           </tr>
           <tr>
             <td>Фантастика</td>
@@ -130,7 +76,60 @@
       </table>
     </section>
 
-    <section id="form">
+    <nav class="main-menu">
+      <a href="#links">Список гиперссылок</a>
+      <a href="#table">Таблица</a>
+      <a href="#form">Форма</a>
+    </nav>
+
+    <section id="links" class="content-section">
+      <h2>Гиперссылки</h2>
+      <ul>
+        <li><a href="http://kubsu.ru/ru/university" target="_blank">Официальный сайт КубГУ (HTTP)</a></li>
+        <li><a href="https://kubsu.ru/ru/university" target="_blank">Официальный сайт КубГУ (HTTPS)</a></li>
+        <li><a href="https://kubsu.ru/ru/university" target="_blank"><img src="flower.jpg" alt="Ссылка-изображение" width="300" height="200"></a></li>
+        <li><a href="#form">Сокращенная ссылка на внутреннюю страницу (к форме)</a></li>
+        <li><a href="#top">Сокращенная ссылка на главную страницу (вверх)</a></li>
+        <li><a href="#part">Ссылка на часть текущей страницы</a></li>
+        <li><a href="https://kubsu.ru/search?query=структура&type=all&lang=ru" target="_blank">Ссылка с тремя параметрами в URL</a></li>
+        <li><a href="https://kubsu.ru/node/44?id=185" target="_blank">Ссылка с параметром id в URL</a></li>
+        <li><a href="https://www.kubsu.ru/ru/studlife" target="_blank">Относительная ссылка на страницу в текущем каталоге</a></li>
+        <li><a href="https://www.kubsu.ru/ru/about" target="_blank">Относительная ссылка на страницу в каталоге about</a></li>
+        <li><a href="https://www.kubsu.ru/ru" target="_blank">Относительная ссылка на страницу уровнем выше текущего</a></li>
+        <li><a href="https://www.kubsu.ru" target="_blank">Относительная ссылка на страницу двумя уровнями выше</a></li>
+        <li><p>Институт географии, геологии, туризма и сервиса - с <a href="https://infoneeds.kubsu.ru/infoneeds/guests/selectspeciality.jsp?fid=6&year=2024" target="_blank">2024</a></p></li>
+        <li><a href="https://vk.com/kubsu_official#Олимпиада" target="_blank">Ссылка на фрагмент страницы стороннего сайта</a></li>
+        <li>
+        <img src="4lIxAADR5qKlGUtBtqKGteXcQhP2qwex.webp" alt="Карта-изображение" usemap="#image-map" width="400">
+        <map name="image-map">
+            <area target="_blank" alt="Прямоугольная область" title="Прямоугольная область" href="https://www.kubsu.ru/ru/sveden" coords="340,20,420,100" shape="rect">
+            <area target="_blank" alt="Круглая область" title="Круглая область" href="https://www.kubsu.ru/ru/node/21" coords="40,200,40" shape="circle">
+        </map>
+      
+        </li>
+        <li><a href="">Ссылка с пустым href</a></li>
+        <li><a>Ссылка без href</a></li>
+        <li><a href="https://kubsu.ru" rel="nofollow" target="_blank">Ссылка, по которой запрещен переход поисковикам</a></li>
+        <li><a href="https://kubsu.ru" rel="noindex" target="_blank">Запрещенная ссылка для индексации поисковиками</a></li>
+        <li>
+          Нумерованный список ссылок с подписями title:
+          <ol>
+            <li><a href="https://kubsu.ru" title="Главная страница университета" target="_blank">Кубанский государственный университет</a></li>
+            <li><a href="https://www.kubsu.ru/ru/university/departments" title="Факультеты" target="_blank">Факультеты</a></li>
+            <li><a href="https://www.kubsu.ru/ru/university/history-tradition" title="История и традиции" target="_blank">История и традиции</a></li>
+          </ol>
+        </li>
+        <li><a href="ftp://ftp.kubsu.ru/documents/price_list.pdf" target="_blank">Ссылка на файл на сервере FTP с авторизацией</a></li>
+      </ul>
+    </section>
+
+    <section id="part" class="content-section">
+      <h2>Часть страницы</h2>
+      <p>Это раздел страницы, на который ведет ссылка</p>
+      <a href="#top">Вернуться наверх</a>
+    </section>
+
+    <section id="form" class="content-section">
       <h2>Форма</h2>
       <form action="/" method="POST">
         <label>ФИО: <br />
@@ -182,6 +181,7 @@
       </form>
     </section>
   </main>
+  
   <footer>
     <div class="footer-content">
       <p>(с) Давид Литвинов</p>
