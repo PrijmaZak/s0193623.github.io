@@ -4,188 +4,283 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Задание №3 - Адаптивная верстка</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="d-flex flex-column min-vh-100">
   <a id="top"></a>
   
-  <header>
-    <div class="header-content">
-      <a href="#" class="logo">
-        <img src="logotip.png" alt="Логотип">
-      </a>
-      <h1 class="site-name">Сайт про все</h1>
-      <nav class="header-menu">
-        <a href="/index.html">Главная</a>
-        <a href="/index.html">Информация</a>
-        <a href="https://vk.com/svingover">Связь со мной</a>
-      </nav>
+  <!-- Header -->
+  <header class="bg-dark text-white">
+    <div class="container">
+      <div class="row align-items-center py-3">
+        <!-- Logo -->
+        <div class="col-12 col-md-3 col-lg-2 text-center text-md-start mb-2 mb-md-0">
+          <a href="#" class="logo d-inline-block">
+            <img src="logotip.png" alt="Логотип" class="img-fluid" style="max-height: 48px;">
+          </a>
+        </div>
+        
+        <!-- Site Name -->
+        <div class="col-12 col-md-6 col-lg-7 text-center">
+          <h1 class="site-name h4 mb-0">Сайт про все</h1>
+        </div>
+        
+        <!-- Navigation -->
+        <div class="col-12 col-md-3 col-lg-3">
+          <nav class="header-menu">
+            <div class="d-flex flex-column flex-md-row justify-content-center justify-content-md-end gap-2">
+              <a href="/index.html" class="text-white text-decoration-none px-2 py-1 rounded">Главная</a>
+              <a href="/index.html" class="text-white text-decoration-none px-2 py-1 rounded">Информация</a>
+              <a href="https://vk.com/svingover" class="text-white text-decoration-none px-2 py-1 rounded">Связь со мной</a>
+            </div>
+          </nav>
+        </div>
+      </div>
     </div>
   </header>
 
-  <main class="content">
-    <section id="table" class="content-section">
-      <h2>Таблица</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Жанры</th>
-            <th>Название/год</th>
-            <th colspan="2">Режисер</th>
-            <th>Оценка</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Триллеры</td>
-            <td>Игра/1997</td>
-            <td>Дэвид Финчер</td>
-            <td>8.3/10</td>
-          </tr>
-          <tr>
-            <td>Боевики</td>
-            <td>Карты, деньги, 2 ствола/1998</td>
-            <td rowspan="2">Гай Ричи</td>
-            <td>8.6/10</td>
-          </tr>
-          <tr>
-            <td>Детективы</td>
-            <td>Воспоминание об убийстве/2003</td>
-            <td>Пон Джун-хо</td>
-            <td>7.6/10</td>
-          </tr>
-          <tr>
-            <td>Фентези</td>
-            <td>Хоббит:Пустошь Смауга/2013</td>
-            <td>Питер Джексон</td>
-            <td>8.0/10</td>
-          </tr>
-          <tr>
-            <td>Фантастика</td>
-            <td>Планета Ка-Пекс/2001</td>
-            <td>Иэн Софтли</td>
-            <td>8.1/10</td>
-          </tr>
-          <tr>
-            <td>Комедии</td>
-            <td>Залечь на дно в Брюгге/2007</td>
-            <td>Мартин Макдона</td>
-            <td>7.8/10</td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
-
-    <nav class="main-menu">
-      <a href="#links">Список гиперссылок</a>
-      <a href="#table">Таблица</a>
-      <a href="#form">Форма</a>
-    </nav>
-
-    <section id="links" class="content-section">
-      <h2>Гиперссылки</h2>
-      <ul>
-        <li><a href="http://kubsu.ru/ru/university" target="_blank">Официальный сайт КубГУ (HTTP)</a></li>
-        <li><a href="https://kubsu.ru/ru/university" target="_blank">Официальный сайт КубГУ (HTTPS)</a></li>
-        <li><a href="https://kubsu.ru/ru/university" target="_blank"><img src="flower.jpg" alt="Ссылка-изображение" width="300" height="200"></a></li>
-        <li><a href="#form">Сокращенная ссылка на внутреннюю страницу (к форме)</a></li>
-        <li><a href="#top">Сокращенная ссылка на главную страницу (вверх)</a></li>
-        <li><a href="#part">Ссылка на часть текущей страницы</a></li>
-        <li><a href="https://kubsu.ru/search?query=структура&type=all&lang=ru" target="_blank">Ссылка с тремя параметрами в URL</a></li>
-        <li><a href="https://kubsu.ru/node/44?id=185" target="_blank">Ссылка с параметром id в URL</a></li>
-        <li><a href="https://www.kubsu.ru/ru/studlife" target="_blank">Относительная ссылка на страницу в текущем каталоге</a></li>
-        <li><a href="https://www.kubsu.ru/ru/about" target="_blank">Относительная ссылка на страницу в каталоге about</a></li>
-        <li><a href="https://www.kubsu.ru/ru" target="_blank">Относительная ссылка на страницу уровнем выше текущего</a></li>
-        <li><a href="https://www.kubsu.ru" target="_blank">Относительная ссылка на страницу двумя уровнями выше</a></li>
-        <li><p>Институт географии, геологии, туризма и сервиса - с <a href="https://infoneeds.kubsu.ru/infoneeds/guests/selectspeciality.jsp?fid=6&year=2024" target="_blank">2024</a></p></li>
-        <li><a href="https://vk.com/kubsu_official#Олимпиада" target="_blank">Ссылка на фрагмент страницы стороннего сайта</a></li>
-        <li>
-        <img src="4lIxAADR5qKlGUtBtqKGteXcQhP2qwex.webp" alt="Карта-изображение" usemap="#image-map" width="400">
-        <map name="image-map">
-            <area target="_blank" alt="Прямоугольная область" title="Прямоугольная область" href="https://www.kubsu.ru/ru/sveden" coords="120,120,200,200" shape="rect">
-            <area target="_blank" alt="Круглая область" title="Круглая область" href="https://www.kubsu.ru/ru/node/21" coords="40,200,40" shape="circle">
-        </map>
-      
-        </li>
-        <li><a href="">Ссылка с пустым href</a></li>
-        <li><a>Ссылка без href</a></li>
-        <li><a href="https://kubsu.ru" rel="nofollow" target="_blank">Ссылка, по которой запрещен переход поисковикам</a></li>
-        <li><a href="https://kubsu.ru" rel="noindex" target="_blank">Запрещенная ссылка для индексации поисковиками</a></li>
-        <li>
-          Нумерованный список ссылок с подписями title:
-          <ol>
-            <li><a href="https://kubsu.ru" title="Главная страница университета" target="_blank">Кубанский государственный университет</a></li>
-            <li><a href="https://www.kubsu.ru/ru/university/departments" title="Факультеты" target="_blank">Факультеты</a></li>
-            <li><a href="https://www.kubsu.ru/ru/university/history-tradition" title="История и традиции" target="_blank">История и традиции</a></li>
-          </ol>
-        </li>
-        <li><a href="ftp://ftp.kubsu.ru/documents/price_list.pdf" target="_blank">Ссылка на файл на сервере FTP с авторизацией</a></li>
-      </ul>
-    </section>
-
-    <section id="part" class="content-section">
-      <h2>Часть страницы</h2>
-      <p>Это раздел страницы, на который ведет ссылка</p>
-      <a href="#top">Вернуться наверх</a>
-    </section>
-
-    <section id="form" class="content-section">
-      <h2>Форма</h2>
-      <form action="/" method="POST">
-        <label>ФИО: <br />
-          <input name="field-name-1" placeholder="Введите ваше ФИО" required>
-        </label><br />
+  <!-- Main Content -->
+  <main class="content flex-grow-1 py-4">
+    <div class="container">
+      <div class="row g-4">
         
-        <label>Номер телефона: <br />
-          <input name="phone" pattern ="[0-9+]{11,15}"placeholder="+7 (888) 555-12-34" required>
-        </label><br />
-        
-        <label>Электронная почта (email):<br />
-          <input name="field-email" type="email" placeholder="Введите почту">
-        </label><br />
-        
-        <label>Дата рождения:<br />
-          <input name="field-date" value="2000-01-01" type="date">
-        </label><br />
-        
-        Пол:<br />
-        <label><input type="radio" checked="checked" name="radio-group-1" value="male">Мужской</label><br />
-        <label><input type="radio" name="radio-group-1" value="female">Женский</label><br />
+        <!-- Main Navigation -->
+        <nav class="col-12">
+          <div class="main-menu bg-light p-3 rounded text-center">
+            <a href="#links" class="text-decoration-none px-3 py-1 mx-1">Список гиперссылок</a>
+            <a href="#table" class="text-decoration-none px-3 py-1 mx-1">Таблица</a>
+            <a href="#form" class="text-decoration-none px-3 py-1 mx-1">Форма</a>
+          </div>
+        </nav>
 
-        <label>Ваш любимый язык программирования:<br />
-          <select name="field-name-2" required multiple="multiple" size="4">
-            <option value="pascal">Pascal</option>
-            <option value="c">C</option>
-            <option value="cpp">C++</option>
-            <option value="javascript">JavaScript</option>
-            <option value="php">PHP</option>
-            <option value="python">Python</option>
-            <option value="java">Java</option>
-            <option value="haskel">Haskel</option>
-            <option value="clojure">Clojure</option>
-            <option value="prolog">Prolog</option>
-            <option value="scala">Scala</option>
-          </select>
-        </label><br />
+        <!-- Table Section - ПЕРВАЯ на мобильном, ВТОРАЯ на планшетах и ПК -->
+        <section id="table" class="col-12 order-1 order-md-2">
+          <div class="content-section border rounded p-3">
+            <h2 class="border-bottom pb-2 mb-3">Таблица</h2>
+            <div class="table-responsive">
+              <table class="table table-bordered table-hover">
+                <thead class="table-dark">
+                  <tr>
+                    <th>Жанры</th>
+                    <th>Название/год</th>
+                    <th colspan="2">Режисер</th>
+                    <th>Оценка</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Триллеры</td>
+                    <td>Игра/1997</td>
+                    <td>Дэвид Финчер</td>
+                    <td>8.3/10</td>
+                  </tr>
+                  <tr>
+                    <td>Боевики</td>
+                    <td>Карты, деньги, 2 ствола/1998</td>
+                    <td rowspan="2">Гай Ричи</td>
+                    <td>8.6/10</td>
+                  </tr>
+                  <tr>
+                    <td>Детективы</td>
+                    <td>Воспоминание об убийстве/2003</td>
+                    <td>Пон Джун-хо</td>
+                    <td>7.6/10</td>
+                  </tr>
+                  <tr>
+                    <td>Фентези</td>
+                    <td>Хоббит:Пустошь Смауга/2013</td>
+                    <td>Питер Джексон</td>
+                    <td>8.0/10</td>
+                  </tr>
+                  <tr>
+                    <td>Фантастика</td>
+                    <td>Планета Ка-Пекс/2001</td>
+                    <td>Иэн Софтли</td>
+                    <td>8.1/10</td>
+                  </tr>
+                  <tr>
+                    <td>Комедии</td>
+                    <td>Залечь на дно в Брюгге/2007</td>
+                    <td>Мартин Макдона</td>
+                    <td>7.8/10</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
 
-        <label>Биография:<br />
-          <textarea name="field-name-2" required></textarea>
-        </label><br />
-        
-        <label>
-          <input type="checkbox" required name="check-1">
-          С контрактом ознакомлен(а)
-        </label><br />
-        
-        <input type="submit" value="Сохранить">
-      </form>
-    </section>
+        <!-- Links Section - ВТОРАЯ на мобильном, ПЕРВАЯ на планшетах и ПК -->
+        <section id="links" class="col-12 order-2 order-md-1">
+          <div class="content-section border rounded p-3">
+            <h2 class="border-bottom pb-2 mb-3">Гиперссылки</h2>
+            <ul class="list-unstyled">
+              <li class="mb-2"><a href="http://kubsu.ru/ru/university" target="_blank" class="text-decoration-none">Официальный сайт КубГУ (HTTP)</a></li>
+              <li class="mb-2"><a href="https://kubsu.ru/ru/university" target="_blank" class="text-decoration-none">Официальный сайт КубГУ (HTTPS)</a></li>
+              <li class="mb-2">
+                <a href="https://kubsu.ru/ru/university" target="_blank" class="d-inline-block">
+                  <img src="flower.jpg" alt="Ссылка-изображение" class="img-fluid rounded" style="max-width: 300px;">
+                </a>
+              </li>
+              <li class="mb-2"><a href="#form" class="text-decoration-none">Сокращенная ссылка на внутреннюю страницу (к форме)</a></li>
+              <li class="mb-2"><a href="#top" class="text-decoration-none">Сокращенная ссылка на главную страницу (вверх)</a></li>
+              <li class="mb-2"><a href="#part" class="text-decoration-none">Ссылка на часть текущей страницы</a></li>
+              <li class="mb-2"><a href="https://kubsu.ru/search?query=структура&type=all&lang=ru" target="_blank" class="text-decoration-none">Ссылка с тремя параметрами в URL</a></li>
+              <li class="mb-2"><a href="https://kubsu.ru/node/44?id=185" target="_blank" class="text-decoration-none">Ссылка с параметром id в URL</a></li>
+              <li class="mb-2"><a href="https://www.kubsu.ru/ru/studlife" target="_blank" class="text-decoration-none">Относительная ссылка на страницу в текущем каталоге</a></li>
+              <li class="mb-2"><a href="https://www.kubsu.ru/ru/about" target="_blank" class="text-decoration-none">Относительная ссылка на страницу в каталоге about</a></li>
+              <li class="mb-2"><a href="https://www.kubsu.ru/ru" target="_blank" class="text-decoration-none">Относительная ссылка на страницу уровнем выше текущего</a></li>
+              <li class="mb-2"><a href="https://www.kubsu.ru" target="_blank" class="text-decoration-none">Относительная ссылка на страницу двумя уровнями выше</a></li>
+              <li class="mb-2">
+                <p class="mb-0">Институт географии, геологии, туризма и сервиса - с <a href="https://infoneeds.kubsu.ru/infoneeds/guests/selectspeciality.jsp?fid=6&year=2024" target="_blank" class="text-decoration-none">2024</a></p>
+              </li>
+              <li class="mb-2"><a href="https://vk.com/kubsu_official#Олимпиада" target="_blank" class="text-decoration-none">Ссылка на фрагмент страницы стороннего сайта</a></li>
+              <li class="mb-2">
+                <div class="image-map-container">
+                  <img src="4lIxAADR5qKlGUtBtqKGteXcQhP2qwex.webp" alt="Карта-изображение" usemap="#image-map" class="img-fluid rounded" style="max-width: 400px;">
+                  <map name="image-map">
+                    <area target="_blank" alt="Прямоугольная область" title="Прямоугольная область" href="https://www.kubsu.ru/ru/sveden" coords="120,120,200,200" shape="rect">
+                    <area target="_blank" alt="Круглая область" title="Круглая область" href="https://www.kubsu.ru/ru/node/21" coords="40,200,40" shape="circle">
+                  </map>
+                </div>
+              </li>
+              <li class="mb-2"><a href="" class="text-decoration-none">Ссылка с пустым href</a></li>
+              <li class="mb-2"><a class="text-decoration-none">Ссылка без href</a></li>
+              <li class="mb-2"><a href="https://kubsu.ru" rel="nofollow" target="_blank" class="text-decoration-none">Ссылка, по которой запрещен переход поисковикам</a></li>
+              <li class="mb-2"><a href="https://kubsu.ru" rel="noindex" target="_blank" class="text-decoration-none">Запрещенная ссылка для индексации поисковиками</a></li>
+              <li class="mb-2">
+                Нумерованный список ссылок с подписями title:
+                <ol class="mt-2">
+                  <li class="mb-1"><a href="https://kubsu.ru" title="Главная страница университета" target="_blank" class="text-decoration-none">Кубанский государственный университет</a></li>
+                  <li class="mb-1"><a href="https://www.kubsu.ru/ru/university/departments" title="Факультеты" target="_blank" class="text-decoration-none">Факультеты</a></li>
+                  <li class="mb-1"><a href="https://www.kubsu.ru/ru/university/history-tradition" title="История и традиции" target="_blank" class="text-decoration-none">История и традиции</a></li>
+                </ol>
+              </li>
+              <li class="mb-2"><a href="ftp://ftp.kubsu.ru/documents/price_list.pdf" target="_blank" class="text-decoration-none">Ссылка на файл на сервере FTP с авторизацией</a></li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- Part Section -->
+        <section id="part" class="col-12 order-3">
+          <div class="content-section border rounded p-3">
+            <h2 class="border-bottom pb-2 mb-3">Часть страницы</h2>
+            <p>Это раздел страницы, на который ведет ссылка</p>
+            <a href="#top" class="btn btn-outline-primary">Вернуться наверх</a>
+          </div>
+        </section>
+
+        <!-- Form Section -->
+        <section id="form" class="col-12 order-4">
+          <div class="content-section border rounded p-3">
+            <h2 class="border-bottom pb-2 mb-3">Форма</h2>
+            <form action="/" method="POST" class="needs-validation" novalidate>
+              <div class="mb-3">
+                <label for="fio" class="form-label">ФИО:</label>
+                <input type="text" class="form-control" id="fio" name="field-name-1" placeholder="Введите ваше ФИО" required>
+                <div class="invalid-feedback">Пожалуйста, введите ваше ФИО.</div>
+              </div>
+              
+              <div class="mb-3">
+                <label for="phone" class="form-label">Номер телефона:</label>
+                <input type="tel" class="form-control" id="phone" name="phone" pattern="[0-9+]{11,15}" placeholder="+7 (888) 555-12-34" required>
+                <div class="invalid-feedback">Пожалуйста, введите корректный номер телефона.</div>
+              </div>
+              
+              <div class="mb-3">
+                <label for="email" class="form-label">Электронная почта (email):</label>
+                <input type="email" class="form-control" id="email" name="field-email" placeholder="Введите почту">
+              </div>
+              
+              <div class="mb-3">
+                <label for="birthdate" class="form-label">Дата рождения:</label>
+                <input type="date" class="form-control" id="birthdate" name="field-date" value="2000-01-01">
+              </div>
+              
+              <div class="mb-3">
+                <label class="form-label">Пол:</label>
+                <div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" id="male" name="radio-group-1" value="male" checked>
+                    <label class="form-check-label" for="male">Мужской</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" id="female" name="radio-group-1" value="female">
+                    <label class="form-check-label" for="female">Женский</label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mb-3">
+                <label for="language" class="form-label">Ваш любимый язык программирования:</label>
+                <select class="form-select" id="language" name="field-name-2" required multiple size="4">
+                  <option value="pascal">Pascal</option>
+                  <option value="c">C</option>
+                  <option value="cpp">C++</option>
+                  <option value="javascript">JavaScript</option>
+                  <option value="php">PHP</option>
+                  <option value="python">Python</option>
+                  <option value="java">Java</option>
+                  <option value="haskel">Haskel</option>
+                  <option value="clojure">Clojure</option>
+                  <option value="prolog">Prolog</option>
+                  <option value="scala">Scala</option>
+                </select>
+                <div class="invalid-feedback">Пожалуйста, выберите хотя бы один язык программирования.</div>
+              </div>
+
+              <div class="mb-3">
+                <label for="biography" class="form-label">Биография:</label>
+                <textarea class="form-control" id="biography" name="field-name-2" rows="4" required></textarea>
+                <div class="invalid-feedback">Пожалуйста, заполните биографию.</div>
+              </div>
+              
+              <div class="mb-3 form-check">
+                <input type="checkbox" class="form-check-input" id="contract" name="check-1" required>
+                <label class="form-check-label" for="contract">С контрактом ознакомлен(а)</label>
+                <div class="invalid-feedback">Необходимо согласие с контрактом.</div>
+              </div>
+              
+              <button type="submit" class="btn btn-primary">Сохранить</button>
+            </form>
+          </div>
+        </section>
+      </div>
+    </div>
   </main>
   
-  <footer>
-    <div class="footer-content">
-      <p>(с) Давид Литвинов</p>
+  <!-- Footer -->
+  <footer class="bg-dark text-white py-3 mt-auto">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 text-center">
+          <p class="mb-0">(с) Давид Литвинов</p>
+        </div>
+      </div>
     </div>
   </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <!-- Form Validation -->
+  <script>
+    (function () {
+      'use strict'
+      var forms = document.querySelectorAll('.needs-validation')
+      Array.prototype.slice.call(forms)
+        .forEach(function (form) {
+          form.addEventListener('submit', function (event) {
+            if (!form.checkValidity()) {
+              event.preventDefault()
+              event.stopPropagation()
+            }
+            form.classList.add('was-validated')
+          }, false)
+        })
+    })()
+  </script>
 </body>
 </html>
