@@ -3,142 +3,307 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Калькулятор стоимости услуги</title>
+    <title>Галерея постеров фильмов</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            max-width: 600px;
-            margin: 50px auto;
-            padding: 20px;
-            background-color: #f5f5f5;
-        }
-        .calculator {
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        .form-group {
-            margin-bottom: 20px;
-        }
-        label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
-        }
-        input, select, button {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-size: 16px;
+        * {
+            margin: 0;
+            padding: 0;
             box-sizing: border-box;
-        }
-        .radio-group {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }        
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+            color: #333;
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
-            gap: 10px;
-        }
-        .radio-group label {
-            display: flex;
             align-items: center;
-            font-weight: normal;
-            cursor: pointer;
+            padding: 40px 20px;
+        }        
+        .container {
+            max-width: 1200px;
+            width: 100%;
+        }        
+        h1 {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2.5rem;
+            background: linear-gradient(90deg, #4a6fa5, #6d9dc5);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
-        .radio-group input[type="radio"] {
-            width: auto;
-            margin-right: 10px;
+        .slider-container {
+            position: relative;
+            margin: 0 auto 40px;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px 0;
+            border: 1px solid rgba(255, 255, 255, 0.5);
         }
-        .checkbox-group label {
+        .slider {
             display: flex;
-            align-items: center;
-            font-weight: normal;
-            cursor: pointer;
+            transition: transform 0.5s ease;
         }
-        .checkbox-group input[type="checkbox"] {
-            width: auto;
-            margin-right: 10px;
-        }
-        button {
-            background-color: #007bff;
-            color: white;
-            border: none;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-        button:hover {
-            background-color: #0056b3;
-        }
-        .result {
-            margin-top: 20px;
+        .slide {
+            flex: 0 0 33.333%;
             padding: 15px;
-            background-color: #e9f7ef;
-            border: 1px solid #28a745;
-            border-radius: 5px;
-            display: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
-        .error {
-            color: #dc3545;
-            font-size: 14px;
-            margin-top: 5px;
-            display: none;
+        .slide-content {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            width: 100%;
+            max-width: 300px;
         }
-        .hidden {
-            display: none;
+        .slide-content:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        .poster {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            display: block;
+        }
+        .movie-title {
+            padding: 15px;
+            text-align: center;
+            font-weight: 600;
+            font-size: 1.1rem;
+            background: #f8f9fa;
+            color: #4a6fa5;
+            border-top: 1px solid #e9ecef;
+        }
+        .slider-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid #e9ecef;
+            border-radius: 50%;
+            color: #4a6fa5;
+            font-size: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.3s ease;
+            z-index: 10;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .slider-nav:hover {
+            background: white;
+            transform: translateY(-50%) scale(1.1);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+        } 
+        .prev {
+            left: 20px;
+        }
+        .next {
+            right: 20px;
+        }
+        .pager {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+            gap: 15px;
+        }
+        .pager-info {
+            font-size: 1.2rem;
+            font-weight: 500;
+            background: white;
+            padding: 8px 20px;
+            border-radius: 30px;
+            color: #4a6fa5;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .pager-dots {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #d1d9e6;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        } 
+        .dot.active {
+            background: #6d9dc5;
+            transform: scale(1.3);
+        }
+        @media (max-width: 768px) {
+            .slide {
+                flex: 0 0 100%;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+            .slider-nav {
+                width: 40px;
+                height: 40px;
+                font-size: 1.2rem;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="calculator">
-        <h1>Калькулятор стоимости услуги</h1>
-        
-        <div class="form-group">
-            <label for="quantity">Количество:</label>
-            <input type="number" id="quantity" placeholder="Введите количество" min="1" value="1">
-            <div class="error" id="quantityError">Пожалуйста, введите целое положительное число</div>
-        </div>
-        
-        <div class="form-group">
-            <label>Тип услуги:</label>
-            <div class="radio-group">
-                <label>
-                    <input type="radio" name="serviceType" value="basic" checked>
-                    Базовая услуга - 1000 руб.
-                </label>
-                <label>
-                    <input type="radio" name="serviceType" value="premium">
-                    Премиум услуга - 2000 руб.
-                </label>
-                <label>
-                    <input type="radio" name="serviceType" value="custom">
-                    Кастомная услуга - 1500 руб.
-                </label>
+    <div class="container">
+        <h1>ПОПУЛЯРНЫЕ ФИЛЬМЫ</h1>       
+        <div class="slider-container">
+            <button class="slider-nav prev">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <div class="slider">
+                <div class="slide">
+                    <div class="slide-content">
+                        <img src="star.jpg" alt="Звездные войны: Новая надежда" class="poster">
+                        <div class="movie-title">Звездные войны: Новая надежда</div>
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="slide-content">
+                        <img src="vlstelin.jpg" alt="Властелин колец: Братство кольца" class="poster">
+                        <div class="movie-title">Властелин колец: Братство кольца</div>
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="slide-content">
+                        <img src="temniy.jpg" alt="Темный рыцарь" class="poster">
+                        <div class="movie-title">Темный рыцарь</div>
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="slide-content">
+                        <img src="krestniy.jpg" alt="Крестный отец" class="poster">
+                        <div class="movie-title">Крестный отец</div>
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="slide-content">
+                        <img src="forest.jpg" alt="Форрест Гамп" class="poster">
+                        <div class="movie-title">Форрест Гамп</div>
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="slide-content">
+                        <img src="nachalo.jpg" alt="Начало" class="poster">
+                        <div class="movie-title">Начало</div>
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="slide-content">
+                        <img src="pobeg.jpg" alt="Побег из Шоушенка" class="poster">
+                        <div class="movie-title">Побег из Шоушенка</div>
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="slide-content">
+                        <img src="spisok.jpg" alt="Список Шиндлера" class="poster">
+                        <div class="movie-title">Список Шиндлера</div>
+                    </div>
+                </div>
+            </div>            
+            <button class="slider-nav next">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>        
+        <div class="pager">
+            <div class="pager-info">
+                Страница <span id="current-page">1</span> из <span id="total-pages">6</span>
             </div>
-        </div>
-        
-        <div class="form-group hidden" id="optionsGroup">
-            <label for="options">Опции товара:</label>
-            <select id="options">
-                <option value="0">Стандартная опция</option>
-                <option value="500">Расширенная опция (+500 руб.)</option>
-                <option value="1000">Профессиональная опция (+1000 руб.)</option>
-            </select>
-        </div>
-        
-        <div class="form-group hidden" id="propertyGroup">
-            <div class="checkbox-group">
-                <label>
-                    <input type="checkbox" id="property" value="300">
-                    Дополнительное свойство (+300 руб.)
-                </label>
+            <div class="pager-dots" id="pager-dots">
             </div>
-        </div>
-        
-        <div class="result" id="result">
-            <strong>Стоимость услуги: <span id="totalCost">0</span> руб.</strong>
         </div>
     </div>
-
-    <script src="calculator.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const slider = document.querySelector('.slider');
+            const slides = document.querySelectorAll('.slide');
+            const prevBtn = document.querySelector('.prev');
+            const nextBtn = document.querySelector('.next');
+            const pagerDots = document.getElementById('pager-dots');
+            const currentPage = document.getElementById('current-page');
+            const totalPages = document.getElementById('total-pages');  
+            let currentIndex = 0;
+            let slidesPerView = 3;
+            let totalPagesCount = 6; 
+            function createPagerDots() {
+                pagerDots.innerHTML = '';
+                for (let i = 0; i < totalPagesCount; i++) {
+                    const dot = document.createElement('div');
+                    dot.className = `dot ${i === 0 ? 'active' : ''}`;
+                    dot.setAttribute('data-page', i);
+                    pagerDots.appendChild(dot);
+                }
+                document.querySelectorAll('.dot').forEach(dot => {
+                    dot.addEventListener('click', function() {
+                        const pageIndex = parseInt(this.getAttribute('data-page'));
+                        goToPage(pageIndex);
+                    });
+                });
+            }
+            function updateSlidesPerView() {
+                if (window.innerWidth <= 768) {
+                    slidesPerView = 1;
+                    totalPagesCount = 8; 
+                } else {
+                    slidesPerView = 3;
+                    totalPagesCount = 6;
+                }
+                totalPages.textContent = totalPagesCount
+                createPagerDots();
+                if (currentIndex >= totalPagesCount) {
+                    currentIndex = totalPagesCount - 1;
+                }  
+                updateSlider();
+            }
+            function updateSlider() {
+                const slideWidth = 100 / slidesPerView;
+                const translateX = -currentIndex * slideWidth;
+                slider.style.transform = `translateX(${translateX}%)`;
+                currentPage.textContent = currentIndex + 1;
+                document.querySelectorAll('.dot').forEach((dot, index) => {
+                    dot.classList.toggle('active', index === currentIndex);
+                });
+            }
+            function nextSlide() {
+                if (currentIndex < totalPagesCount - 1) {
+                    currentIndex++;
+                    updateSlider();
+                }
+            } 
+            function prevSlide() {
+                if (currentIndex > 0) {
+                    currentIndex--;
+                    updateSlider();
+                }
+            }
+            function goToPage(pageIndex) {
+                currentIndex = pageIndex;
+                updateSlider();
+            }
+            prevBtn.addEventListener('click', prevSlide);
+            nextBtn.addEventListener('click', nextSlide);
+            window.addEventListener('resize', updateSlidesPerView);
+            createPagerDots();
+            updateSlidesPerView();
+        });
+    </script>
 </body>
 </html>
